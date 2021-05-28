@@ -182,6 +182,9 @@ try {
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   // uc4 finding index using name
+  console.log(
+    "******************************************************************"
+  );
   let index = contactDetailsArray.findIndex(
     (contact) => contact.firstName == "Roma"
   );
@@ -189,7 +192,15 @@ try {
   contactDetailsArray[index].zip = "121003";
 
   //displaying contacts after being updated
-  console.log("contacts after being updated: ");
+  console.log("Contacts after being updated: ");
+  contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+
+  //uc5 Removes an element from an array at specified index
+  console.log(
+    "******************************************************************"
+  );
+  contactDetailsArray.splice(index, 1);
+  console.log("Contacts after being deleted:");
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 } catch (e) {
   console.log(e);
