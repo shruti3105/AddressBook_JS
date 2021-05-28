@@ -276,6 +276,32 @@ try {
     contactDetailsArray.sort(contactDetails.firstName);
   }
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+
+  //UC12
+  function SortByCity() {
+    for (let contactDetails in contactDetailsArray) {
+      contactDetailsArray.sort(contactDetails.city);
+    }
+    contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+  }
+  function SortByState() {
+    for (let contactDetails in contactDetailsArray) {
+      contactDetailsArray.sort(contactDetails.state);
+    }
+    contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+  }
+  function SortByZip() {
+    for (let contactDetails in contactDetailsArray) {
+      contactDetailsArray.sort(contactDetails.zip);
+    }
+    contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+  }
+  console.log("Sort By City");
+  SortByCity();
+  console.log("Sort By State");
+  SortByState();
+  console.log("Sort By Zip");
+  SortByZip();
 } catch (e) {
   console.log(e);
 }
