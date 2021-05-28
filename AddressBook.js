@@ -202,6 +202,18 @@ try {
   contactDetailsArray.splice(index, 1);
   console.log("Contacts after being deleted:");
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+
+  //uc6 Reduce function to find number of contacts
+  console.log(
+    "*******************************************************************"
+  );
+  var totalContacts = 0;
+  function FindTotalContacts(contactDetailsArray) {
+    if (contactDetailsArray != null) totalContacts++;
+    return totalContacts;
+  }
+  contactDetailsArray.reduce(FindTotalContacts, 1);
+  console.log("Total number of contacts in addressbook: " + totalContacts);
 } catch (e) {
   console.log(e);
 }
