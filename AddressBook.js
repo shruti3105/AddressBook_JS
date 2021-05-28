@@ -180,6 +180,17 @@ try {
   );
   //printing array before updating
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+
+  // uc4 finding index using name
+  let index = contactDetailsArray.findIndex(
+    (contact) => contact.firstName == "Roma"
+  );
+  //updating the contact detail
+  contactDetailsArray[index].zip = "121003";
+
+  //displaying contacts after being updated
+  console.log("contacts after being updated: ");
+  contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 } catch (e) {
   console.log(e);
 }
