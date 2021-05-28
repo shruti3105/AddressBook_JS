@@ -214,6 +214,17 @@ try {
   }
   contactDetailsArray.reduce(FindTotalContacts, 1);
   console.log("Total number of contacts in addressbook: " + totalContacts);
+
+  //uc7 check for duplicate value
+  let countForDuplicate = 0;
+  function CheckForDuplicates(contact) {
+    if (contact.firstName == "Shruti") countForDuplicate++;
+    return countForDuplicate;
+  }
+  //using foreach checking the count for each contact
+  contactDetailsArray.forEach((contact) => CheckForDuplicates(contact));
+  if (countForDuplicate == 1) console.log("Not a duplicate entry!");
+  else console.log("Duplicate entry!");
 } catch (e) {
   console.log(e);
 }
