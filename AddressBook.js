@@ -247,6 +247,28 @@ try {
   console.log("Contact By State: ");
   contactDetailsArray.filter(ContactByState);
   console.log("Contacts by state: " + numberOfState);
+
+  //uc9 Contacts by city or State using map
+  //by state
+  console.log("contact details by city or state using map");
+  function CityMap(contact) {
+    return contact.city + " -> " + contact.firstName + "  " + contact.lastName;
+  }
+  let addressCityMap = contactDetailsArray.map(CityMap);
+  console.log(addressCityMap);
+
+  //by city
+  function StateMap(contactDetails) {
+    return (
+      contactDetails.state +
+      " -> " +
+      contactDetails.firstName +
+      "  " +
+      contactDetails.lastName
+    );
+  }
+  let addressStateMap = contactDetailsArray.map(StateMap);
+  console.log(addressStateMap);
 } catch (e) {
   console.log(e);
 }
