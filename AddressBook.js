@@ -182,9 +182,7 @@ try {
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   // uc4 finding index using name
-  console.log(
-    "******************************************************************"
-  );
+  console.log("");
   let index = contactDetailsArray.findIndex(
     (contact) => contact.firstName == "Roma"
   );
@@ -196,17 +194,13 @@ try {
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   //uc5 Removes an element from an array at specified index
-  console.log(
-    "******************************************************************"
-  );
+  console.log("");
   contactDetailsArray.splice(index, 1);
   console.log("Contacts after being deleted:");
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   //uc6 Reduce function to find number of contacts
-  console.log(
-    "*******************************************************************"
-  );
+  console.log("");
   var totalContacts = 0;
   function FindTotalContacts(contactDetailsArray) {
     if (contactDetailsArray != null) totalContacts++;
@@ -225,6 +219,34 @@ try {
   contactDetailsArray.forEach((contact) => CheckForDuplicates(contact));
   if (countForDuplicate == 1) console.log("Not a duplicate entry!");
   else console.log("Duplicate entry!");
+
+  //uc8 search person using city or state & uc10 for counting
+  //by city
+  var numberOfCity = 0;
+  var numberOfState = 0;
+  console.log("");
+  console.log("Contact of City: 'Paris'");
+  function ContactByCity(contactDetails) {
+    if (contactDetails.city == "Paris") {
+      console.log(contactDetails.toString());
+      numberOfCity++;
+    }
+  }
+  contactDetailsArray.filter(ContactByCity);
+  console.log("Number of ontacts of city: " + numberOfCity);
+
+  //by state
+  console.log("");
+  console.log("Contact of State: 'Haryana'");
+  function ContactByState(contact) {
+    if (contact.state == "Haryana") {
+      console.log(contact.toString());
+      numberOfState++;
+    }
+  }
+  console.log("Contact By State: ");
+  contactDetailsArray.filter(ContactByState);
+  console.log("Contacts by state: " + numberOfState);
 } catch (e) {
   console.log(e);
 }
